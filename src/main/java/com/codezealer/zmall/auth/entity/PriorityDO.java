@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Slf4j
-public class AuthPriority implements Serializable {
+public class PriorityDO implements Serializable {
 
 
     private static final long serialVersionUID = 1L;

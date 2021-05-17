@@ -1,9 +1,16 @@
 package com.codezealer.zmall.auth.controller;
 
 
+import com.codezealer.zmall.auth.dto.PriorityDTO;
+import com.codezealer.zmall.auth.service.PriorityService;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -17,5 +24,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth-priority")
 public class AuthPriorityController {
 
+    @Resource
+    PriorityService priorityService;
+
+    @RequestMapping("/root")
+    public List<PriorityDTO> getRoot() {
+        return priorityService.listRootPriorities();
+    }
+
+    @RequestMapping("/getChildPriority/{id}")
+    public List<PriorityDTO> getChildPriority(@PathVariable("id") Long id) {
+        return priorityService.listChildPriority(id);
+    }
+
+    @RequestMapping("/save")
+    public boolean savePriority(@RequestBody PriorityDTO priorityDTO) {
+        return priorityService.savePriority(priorityDTO);
+    }
 }
 

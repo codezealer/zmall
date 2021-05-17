@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 账号表，电商公司里一个员工就对应着一个账号，每个账号给分配多个角色，同时这个账号也可以给分配多个权限
+ * 角色和权限的关系表，角色和权限是多对多的关系，一个角色可以对应多个权限，一个权限可以属于多个角色
  * </p>
  *
  * @author codezealer
@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class AuthAccount implements Serializable {
+public class RolePriorityRelationshipDO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -28,37 +28,22 @@ public class AuthAccount implements Serializable {
     private Long id;
 
     /**
-     * 用户名，英文
+     * 权限的主键
      */
-    private String username;
+    private Long priorityId;
 
     /**
-     * 账号的密码
+     * 角色的主键
      */
-    private Integer password;
+    private Long roleId;
 
     /**
-     * 姓名，中文
-     */
-    private String employeName;
-
-    /**
-     * 账号的说明备注
-     */
-    private String accountComment;
-
-    /**
-     * 账号是否启用，1：启用，0：未启用
-     */
-    private Integer isEnabled;
-
-    /**
-     * 账号的创建时间
+     * 创建时间
      */
     private LocalDateTime gmtCreate;
 
     /**
-     * 账号的更新时间
+     * 更新时间
      */
     private LocalDateTime gmtModified;
 

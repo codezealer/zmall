@@ -1,6 +1,6 @@
 package com.codezealer.zmall.auth.service;
 
-import com.codezealer.zmall.auth.entity.AuthRole;
+import com.codezealer.zmall.auth.entity.RoleDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author codezealer
  * @since 2021-05-17
  */
-public interface AuthRoleService extends IService<AuthRole> {
+public interface RoleService extends IService<RoleDO> {
 
 }

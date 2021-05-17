@@ -1,6 +1,6 @@
 package com.codezealer.zmall.auth.mapper;
 
-import com.codezealer.zmall.auth.entity.AuthAccount;
+import com.codezealer.zmall.auth.entity.AccountDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author codezealer
  * @since 2021-05-17
  */
-public interface AuthAccountMapper extends BaseMapper<AuthAccount> {
+public interface AuthAccountMapper extends BaseMapper<AccountDO> {
 
 }

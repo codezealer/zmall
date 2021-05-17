@@ -3,7 +3,7 @@
 <mapper namespace="com.codezealer.zmall.auth.mapper.AuthRoleMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.codezealer.zmall.auth.entity.AuthRole">
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.auth.entity.RoleDO">
         <id column="id" property="id" />
         <result column="code" property="code" />
         <result column="role_name" property="roleName" />

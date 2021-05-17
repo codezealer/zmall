@@ -1,8 +1,8 @@
 package com.codezealer.zmall.auth.service.impl;
 
-import com.codezealer.zmall.auth.entity.AuthRole;
+import com.codezealer.zmall.auth.entity.RoleDO;
 import com.codezealer.zmall.auth.mapper.AuthRoleMapper;
-import com.codezealer.zmall.auth.service.AuthRoleService;
+import com.codezealer.zmall.auth.service.RoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-05-17
  */
 @Service
-public class AuthRoleServiceImpl extends ServiceImpl<AuthRoleMapper, AuthRole> implements AuthRoleService {
+public class RoleServiceImpl extends ServiceImpl<AuthRoleMapper, RoleDO> implements RoleService {
 
 }

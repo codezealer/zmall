@@ -1,6 +1,6 @@
 package com.codezealer.zmall.auth.mapper;
 
-import com.codezealer.zmall.auth.entity.AuthRole;
+import com.codezealer.zmall.auth.entity.RoleDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author codezealer
  * @since 2021-05-17
  */
-public interface AuthRoleMapper extends BaseMapper<AuthRole> {
+public interface AuthRoleMapper extends BaseMapper<RoleDO> {
 
 }

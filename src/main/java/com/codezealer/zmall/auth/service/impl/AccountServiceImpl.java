@@ -1,8 +1,8 @@
 package com.codezealer.zmall.auth.service.impl;
 
-import com.codezealer.zmall.auth.entity.AuthAccount;
+import com.codezealer.zmall.auth.entity.AccountDO;
 import com.codezealer.zmall.auth.mapper.AuthAccountMapper;
-import com.codezealer.zmall.auth.service.AuthAccountService;
+import com.codezealer.zmall.auth.service.AccountService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-05-17
  */
 @Service
-public class AuthAccountServiceImpl extends ServiceImpl<AuthAccountMapper, AuthAccount> implements AuthAccountService {
+public class AccountServiceImpl extends ServiceImpl<AuthAccountMapper, AccountDO> implements AccountService {
 
 }

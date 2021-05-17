@@ -1,7 +1,7 @@
 package com.codezealer.zmall.auth.service;
 
 import com.codezealer.zmall.auth.dto.PriorityDTO;
-import com.codezealer.zmall.auth.entity.AuthPriority;
+import com.codezealer.zmall.auth.entity.PriorityDO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -14,6 +14,16 @@ import java.util.List;
  * @author codezealer
  * @since 2021-05-17
  */
-public interface AuthPriorityService extends IService<AuthPriority> {
+public interface PriorityService extends IService<PriorityDO> {
     List<PriorityDTO> listRootPriorities();
+
+    List<PriorityDTO> listChildPriority(Long id);
+
+    PriorityDTO getPriority(Long id);
+
+    boolean savePriority(PriorityDTO priorityDTO);
+
+    boolean updatePriority(PriorityDTO priorityDTO);
+
+    boolean deletePriority(Long id);
 }
