@@ -9,4 +9,5 @@ public interface PriorityDAO {
 
     Boolean deleteById(Long id);
 
+    PriorityDO selectById(Long priorityId);
 }

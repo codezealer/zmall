@@ -1,6 +1,7 @@
 package com.codezealer.zmall.auth.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.codezealer.zmall.auth.composite.PriorityNode;
 import com.codezealer.zmall.auth.dao.AccountPriorityRelationshipDAO;
 import com.codezealer.zmall.auth.dao.PriorityDAO;
 import com.codezealer.zmall.auth.dao.RolePriorityRelationshipDAO;
@@ -9,6 +10,9 @@ import com.codezealer.zmall.auth.entity.PriorityDO;
 import com.codezealer.zmall.auth.mapper.AuthPriorityMapper;
 import com.codezealer.zmall.auth.service.PriorityService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.codezealer.zmall.auth.visitor.PriorityNodeDeleteVisitor;
+import com.codezealer.zmall.auth.visitor.PriorityNodeRelateCheckVisitor;
+import com.codezealer.zmall.auth.visitor.PriorityNodeVisitor;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -32,7 +36,6 @@ public class PriorityServiceImpl extends ServiceImpl<AuthPriorityMapper, Priorit
     PriorityDAO priorityDAO;
     @Resource
     AccountPriorityRelationshipDAO accountPriorityRelationshipDAO;
-
     @Resource
     RolePriorityRelationshipDAO rolePriorityRelationshipDAO;
 
@@ -79,14 +82,29 @@ public class PriorityServiceImpl extends ServiceImpl<AuthPriorityMapper, Priorit
      * @return
      */
     @Override
-    public boolean deletePriority(Long priorityId) {
+    public boolean deletePriority1(Long priorityId) {
         List<PriorityDO> children = priorityDAO.listChildren(priorityId);
         if (children != null && children.size() > 0) {
             for (PriorityDO child : children) {
-                deletePriority(child.getId());
+                deletePriority1(child.getId());
             }
         }
         priorityDAO.deleteById(priorityId);
+        return true;
+    }
+
+    @Override
+    public boolean deletePriority(Long priorityId) {
+        PriorityDO priorityDO = priorityDAO.selectById(priorityId);
+        PriorityNode priorityNode = priorityDO.clone(PriorityNode.class);
+        PriorityNodeRelateCheckVisitor relateCheckVisitor = new PriorityNodeRelateCheckVisitor(priorityDAO, accountPriorityRelationshipDAO, rolePriorityRelationshipDAO);
+        relateCheckVisitor.visit(priorityNode);
+        boolean relateCheckResult = relateCheckVisitor.getCheckRelateResult();
+        if (relateCheckResult) {
+            return false;
+        }
+        PriorityNodeDeleteVisitor deleteVisitor = new PriorityNodeDeleteVisitor(priorityDAO);
+        deleteVisitor.visit(priorityNode);
         return true;
     }
 

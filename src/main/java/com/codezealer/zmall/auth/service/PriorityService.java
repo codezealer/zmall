@@ -25,5 +25,7 @@ public interface PriorityService extends IService<PriorityDO> {
 
     boolean updatePriority(PriorityDTO priorityDTO);
 
-    boolean deletePriority(Long id);
+    boolean deletePriority1(Long id);
+
+    boolean deletePriority(Long priorityId);
 }

@@ -24,4 +24,9 @@ public class PriorityDAOImpl implements PriorityDAO {
         return priorityMapper.deleteById(id) > 0 ? true : false;
     }
 
+    @Override
+    public PriorityDO selectById(Long priorityId) {
+        return priorityMapper.selectById(priorityId);
+    }
+
 }
