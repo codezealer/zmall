@@ -2,6 +2,7 @@ package com.codezealer.zmall.auth.mapper;
 
 import com.codezealer.zmall.auth.entity.PriorityDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author codezealer
  * @since 2021-05-17
  */
+
+@Mapper
 public interface AuthPriorityMapper extends BaseMapper<PriorityDO> {
 
 

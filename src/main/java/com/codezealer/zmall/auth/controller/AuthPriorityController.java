@@ -41,5 +41,10 @@ public class AuthPriorityController {
     public boolean savePriority(@RequestBody PriorityDTO priorityDTO) {
         return priorityService.savePriority(priorityDTO);
     }
+
+    @RequestMapping("/delete/{id}")
+    public boolean deletePriority(@PathVariable("id") Long priorityId) {
+        return priorityService.deletePriority(priorityId);
+    }
 }
 
