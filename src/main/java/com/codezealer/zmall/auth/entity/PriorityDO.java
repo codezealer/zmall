@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.codezealer.zmall.common.util.BeanCopierUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,7 +26,7 @@ import javax.persistence.Table;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Slf4j
-@Table(name = "auth_priority")
+@TableName( "auth_priority")
 public class PriorityDO implements Serializable {
 
 

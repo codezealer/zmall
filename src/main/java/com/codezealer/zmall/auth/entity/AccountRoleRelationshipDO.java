@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -19,7 +21,7 @@ import javax.persistence.Table;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Table(name = "auth_account_role_relationship")
+@TableName( "auth_account_role_relationship")
 public class AccountRoleRelationshipDO implements Serializable {
 
     private static final long serialVersionUID = 1L;
