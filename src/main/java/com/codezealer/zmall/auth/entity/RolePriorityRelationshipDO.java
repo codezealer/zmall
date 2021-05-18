@@ -7,6 +7,8 @@ import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Table;
+
 /**
  * <p>
  * 角色和权限的关系表，角色和权限是多对多的关系，一个角色可以对应多个权限，一个权限可以属于多个角色
@@ -17,6 +19,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@Table(name = "auth_role_priority_relationship")
 public class RolePriorityRelationshipDO implements Serializable {
 
     private static final long serialVersionUID = 1L;

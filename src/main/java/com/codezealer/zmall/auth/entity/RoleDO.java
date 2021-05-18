@@ -7,6 +7,8 @@ import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Table;
+
 /**
  * <p>
  * 角色表，在系统中有多个角色，每个角色可以分配一些权限
@@ -17,6 +19,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@Table(name = "auth_role")
 public class RoleDO implements Serializable {
 
     private static final long serialVersionUID = 1L;

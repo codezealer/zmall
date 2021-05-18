@@ -7,6 +7,8 @@ import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Table;
+
 /**
  * <p>
  * 账号和角色的关系表，一个账号可以对应多个角色，一个角色也可以对应多个账号
@@ -17,6 +19,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@Table(name = "auth_account_role_relationship")
 public class AccountRoleRelationshipDO implements Serializable {
 
     private static final long serialVersionUID = 1L;

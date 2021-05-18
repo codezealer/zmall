@@ -7,6 +7,8 @@ import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Table;
+
 /**
  * <p>
  * 账号与权限的关系表，一个账号可以对应多个权限，一个权限也可以属于多个账号
@@ -17,6 +19,8 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+
+@Table(name = "auth_account_priority_relationship")
 public class AccountPriorityRelationshipDO implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.persistence.Table;
+
 /**
  * <p>
  * 权限表，每个权限代表了系统中的一个菜单、按钮、URL请求
@@ -23,6 +25,7 @@ import org.slf4j.LoggerFactory;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Slf4j
+@Table(name = "auth_priority")
 public class PriorityDO implements Serializable {
 
 
