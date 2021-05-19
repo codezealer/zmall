@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.comment.mapper.CommentInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.comment.entity.CommentInfo">
+        <id column="id" property="id" />
+        <result column="user_account_id" property="userAccountId" />
+        <result column="username" property="username" />
+        <result column="order_id" property="orderId" />
+        <result column="goods_id" property="goodsId" />
+        <result column="goods_sku_id" property="goodsSkuId" />
+        <result column="goods_sku_sale_properties" property="goodsSkuSaleProperties" />
+        <result column="total_score" property="totalScore" />
+        <result column="goods_score" property="goodsScore" />
+        <result column="customer_service_score" property="customerServiceScore" />
+        <result column="logistics_score" property="logisticsScore" />
+        <result column="comment_content" property="commentContent" />
+        <result column="is_show_pictures" property="isShowPictures" />
+        <result column="is_default_comment" property="isDefaultComment" />
+        <result column="comment_status" property="commentStatus" />
+        <result column="comment_type" property="commentType" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_account_id, username, order_id, goods_id, goods_sku_id, goods_sku_sale_properties, total_score, goods_score, customer_service_score, logistics_score, comment_content, is_show_pictures, is_default_comment, comment_status, comment_type, gmt_create, gmt_modified
+    </sql>
+
+</mapper>

@@ -67,12 +67,12 @@ public class PriorityServiceImpl extends ServiceImpl<AuthPriorityMapper, Priorit
 
     @Override
     public boolean savePriority(PriorityDTO priorityDTO) {
-        return authPriorityMapper.insert(priorityDTO.clone(PriorityDO.class)) > 0 ? true : false;
+        return authPriorityMapper.insert(priorityDTO.clone(PriorityDO.class)) > 0;
     }
 
     @Override
     public boolean updatePriority(PriorityDTO priorityDTO) {
-        return authPriorityMapper.updateById(priorityDTO.clone(PriorityDO.class)) > 0 ? true : false;
+        return authPriorityMapper.updateById(priorityDTO.clone(PriorityDO.class)) > 0;
     }
 
     /**

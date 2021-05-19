@@ -1,4 +1,4 @@
-# ÅäÖÃ¶Ë¿Ú
+# é…ç½®ç«¯å£
 server:
   port: 8085
   servlet:
@@ -6,89 +6,89 @@ server:
 spring:
   application:
     name: zmall
-  # ÅäÖÃÊı¾İÔ´
+  # é…ç½®æ•°æ®æº
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/zmall?serverTimezone=UTC&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     druid:
-      #³õÊ¼»¯´óĞ¡
+      #åˆå§‹åŒ–å¤§å°
       initialSize: 5
-      #×îĞ¡Öµ
+      #æœ€å°å€¼
       minIdle: 5
-      #×î´óÖµ
+      #æœ€å¤§å€¼
       maxActive: 20
-      #×î´óµÈ´ıÊ±¼ä£¬ÅäÖÃ»ñÈ¡Á¬½ÓµÈ´ı³¬Ê±£¬Ê±¼äµ¥Î»¶¼ÊÇºÁÃëms
+      #æœ€å¤§ç­‰å¾…æ—¶é—´ï¼Œé…ç½®è·å–è¿æ¥ç­‰å¾…è¶…æ—¶ï¼Œæ—¶é—´å•ä½éƒ½æ˜¯æ¯«ç§’ms
       maxWait: 60000
-      #ÅäÖÃ¼ä¸ô¶à¾Ã²Å½øĞĞÒ»´Î¼ì²â£¬¼ì²âĞèÒª¹Ø±ÕµÄ¿ÕÏĞÁ¬½Ó
+      #é…ç½®é—´éš”å¤šä¹…æ‰è¿›è¡Œä¸€æ¬¡æ£€æµ‹ï¼Œæ£€æµ‹éœ€è¦å…³é—­çš„ç©ºé—²è¿æ¥
       timeBetweenEvictionRunsMillis: 60000
-      #ÅäÖÃÒ»¸öÁ¬½ÓÔÚ³ØÖĞ×îĞ¡Éú´æµÄÊ±¼ä
+      #é…ç½®ä¸€ä¸ªè¿æ¥åœ¨æ± ä¸­æœ€å°ç”Ÿå­˜çš„æ—¶é—´
       minEvictableIdleTimeMillis: 300000
       validationQuery: SELECT 1 FROM DUAL
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
       poolPreparedStatements: true
-      # ÅäÖÃ¼à¿ØÍ³¼ÆÀ¹½ØµÄfilters£¬È¥µôºó¼à¿Ø½çÃæsqlÎŞ·¨Í³¼Æ£¬
-      #'wall'ÓÃÓÚ·À»ğÇ½£¬SpringBootÖĞÃ»ÓĞlog4j£¬ÎÒ¸Ä³ÉÁËlog4j2
+      # é…ç½®ç›‘æ§ç»Ÿè®¡æ‹¦æˆªçš„filtersï¼Œå»æ‰åç›‘æ§ç•Œé¢sqlæ— æ³•ç»Ÿè®¡ï¼Œ
+      #'wall'ç”¨äºé˜²ç«å¢™ï¼ŒSpringBootä¸­æ²¡æœ‰log4jï¼Œæˆ‘æ”¹æˆäº†log4j2
       filters: stat,wall,log4j2
-      #×î´óPSCacheÁ¬½Ó
+      #æœ€å¤§PSCacheè¿æ¥
       maxPoolPreparedStatementPerConnectionSize: 20
       useGlobalDataSourceStat: true
-      # Í¨¹ıconnectPropertiesÊôĞÔÀ´´ò¿ªmergeSql¹¦ÄÜ£»ÂıSQL¼ÇÂ¼
+      # é€šè¿‡connectPropertieså±æ€§æ¥æ‰“å¼€mergeSqlåŠŸèƒ½ï¼›æ…¢SQLè®°å½•
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-      # ÅäÖÃStatFilter
+      # é…ç½®StatFilter
       web-stat-filter:
-        #Ä¬ÈÏÎªfalse£¬ÉèÖÃÎªtrueÆô¶¯
+        #é»˜è®¤ä¸ºfalseï¼Œè®¾ç½®ä¸ºtrueå¯åŠ¨
         enabled: true
         url-pattern: "/*"
         exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
-      #ÅäÖÃStatViewServlet
+      #é…ç½®StatViewServlet
       stat-view-servlet:
         url-pattern: "/druid/*"
-        #ÔÊĞíÄÇĞ©ip
+        #å…è®¸é‚£äº›ip
         allow: 127.0.0.1
         login-username: admin
         login-password: 123456
-        #½ûÖ¹ÄÇĞ©ip
+        #ç¦æ­¢é‚£äº›ip
         deny: 192.168.1.102
-        #ÊÇ·ñ¿ÉÒÔÖØÖÃ
+        #æ˜¯å¦å¯ä»¥é‡ç½®
         reset-enable: true
-        #ÆôÓÃ
+        #å¯ç”¨
         enabled: true
-# mybatis-plusÏà¹ØÅäÖÃ
+# mybatis-plusç›¸å…³é…ç½®
 mybatis-plus:
-  # xmlÉ¨Ãè£¬¶à¸öÄ¿Â¼ÓÃ¶ººÅ»òÕß·ÖºÅ·Ö¸ô£¨¸æËß Mapper Ëù¶ÔÓ¦µÄ XML ÎÄ¼şÎ»ÖÃ£©
+  # xmlæ‰«æï¼Œå¤šä¸ªç›®å½•ç”¨é€—å·æˆ–è€…åˆ†å·åˆ†éš”ï¼ˆå‘Šè¯‰ Mapper æ‰€å¯¹åº”çš„ XML æ–‡ä»¶ä½ç½®ï¼‰
   mapper-locations: classpath:**/*Mapper.xml
-  # ÒÔÏÂÅäÖÃ¾ùÓĞÄ¬ÈÏÖµ,¿ÉÒÔ²»ÉèÖÃ
+  # ä»¥ä¸‹é…ç½®å‡æœ‰é»˜è®¤å€¼,å¯ä»¥ä¸è®¾ç½®
   global-config:
-    #Ö÷¼üÀàĞÍ  0:"Êı¾İ¿âID×ÔÔö", 1:"ÓÃ»§ÊäÈëID",2:"È«¾ÖÎ¨Ò»ID (Êı×ÖÀàĞÍÎ¨Ò»ID)", 3:"È«¾ÖÎ¨Ò»ID UUID";
+    #ä¸»é”®ç±»å‹  0:"æ•°æ®åº“IDè‡ªå¢", 1:"ç”¨æˆ·è¾“å…¥ID",2:"å…¨å±€å”¯ä¸€ID (æ•°å­—ç±»å‹å”¯ä¸€ID)", 3:"å…¨å±€å”¯ä¸€ID UUID";
     id-type: 0
-    #×Ö¶Î²ßÂÔ 0:"ºöÂÔÅĞ¶Ï",1:"·Ç NULL ÅĞ¶Ï"),2:"·Ç¿ÕÅĞ¶Ï"
+    #å­—æ®µç­–ç•¥ 0:"å¿½ç•¥åˆ¤æ–­",1:"é NULL åˆ¤æ–­"),2:"éç©ºåˆ¤æ–­"
     field-strategy: 2
-    #ÍÕ·åÏÂ»®Ïß×ª»»
+    #é©¼å³°ä¸‹åˆ’çº¿è½¬æ¢
     db-column-underline: true
-    #Ë¢ĞÂmapper µ÷ÊÔÉñÆ÷
+    #åˆ·æ–°mapper è°ƒè¯•ç¥å™¨
     refresh-mapper: false
-    #Êı¾İ¿â´óĞ´ÏÂ»®Ïß×ª»»
+    #æ•°æ®åº“å¤§å†™ä¸‹åˆ’çº¿è½¬æ¢
     #capital-mode: true
-    #ĞòÁĞ½Ó¿ÚÊµÏÖÀàÅäÖÃ
+    #åºåˆ—æ¥å£å®ç°ç±»é…ç½®
     #key-generator: com.baomidou.springboot.xxx
-    #Âß¼­É¾³ıÅäÖÃ
-    #logic-delete-value: 0 # Âß¼­ÒÑÉ¾³ıÖµ(Ä¬ÈÏÎª 1)
-    #logic-not-delete-value: 1 # Âß¼­Î´É¾³ıÖµ(Ä¬ÈÏÎª 0)
-    #×Ô¶¨ÒåÌî³ä²ßÂÔ½Ó¿ÚÊµÏÖ
+    #é€»è¾‘åˆ é™¤é…ç½®
+    #logic-delete-value: 0 # é€»è¾‘å·²åˆ é™¤å€¼(é»˜è®¤ä¸º 1)
+    #logic-not-delete-value: 1 # é€»è¾‘æœªåˆ é™¤å€¼(é»˜è®¤ä¸º 0)
+    #è‡ªå®šä¹‰å¡«å……ç­–ç•¥æ¥å£å®ç°
     #    meta-object-handler: com.zhengqing.config.MyMetaObjectHandler
-    #×Ô¶¨ÒåSQL×¢ÈëÆ÷
+    #è‡ªå®šä¹‰SQLæ³¨å…¥å™¨
     #sql-injector: com.baomidou.springboot.xxx
   configuration:
-    # ÊÇ·ñ¿ªÆô×Ô¶¯ÍÕ·åÃüÃû¹æÔòÓ³Éä:´ÓÊı¾İ¿âÁĞÃûµ½JavaÊôĞÔÍÕ·åÃüÃûµÄÀàËÆÓ³Éä
+    # æ˜¯å¦å¼€å¯è‡ªåŠ¨é©¼å³°å‘½åè§„åˆ™æ˜ å°„:ä»æ•°æ®åº“åˆ—ååˆ°Javaå±æ€§é©¼å³°å‘½åçš„ç±»ä¼¼æ˜ å°„
     map-underscore-to-camel-case: true
     cache-enabled: false
-    # Èç¹û²éÑ¯½á¹ûÖĞ°üº¬¿ÕÖµµÄÁĞ£¬Ôò MyBatis ÔÚÓ³ÉäµÄÊ±ºò£¬²»»áÓ³ÉäÕâ¸ö×Ö¶Î
+    # å¦‚æœæŸ¥è¯¢ç»“æœä¸­åŒ…å«ç©ºå€¼çš„åˆ—ï¼Œåˆ™ MyBatis åœ¨æ˜ å°„çš„æ—¶å€™ï¼Œä¸ä¼šæ˜ å°„è¿™ä¸ªå­—æ®µ
     #    call-setters-on-nulls: true
-    # Õâ¸öÅäÖÃ»á½«Ö´ĞĞµÄsql´òÓ¡³öÀ´£¬ÔÚ¿ª·¢»ò²âÊÔµÄÊ±ºò¿ÉÒÔÓÃ
+    # è¿™ä¸ªé…ç½®ä¼šå°†æ‰§è¡Œçš„sqlæ‰“å°å‡ºæ¥ï¼Œåœ¨å¼€å‘æˆ–æµ‹è¯•çš„æ—¶å€™å¯ä»¥ç”¨
     #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    # ½â¾öoracle¸üĞÂÊı¾İÎªnullÊ±ÎŞ·¨×ª»»±¨´í£¬mysql²»»á³öÏÖ´ËÇé¿ö
+    # è§£å†³oracleæ›´æ–°æ•°æ®ä¸ºnullæ—¶æ— æ³•è½¬æ¢æŠ¥é”™ï¼Œmysqlä¸ä¼šå‡ºç°æ­¤æƒ…å†µ
     jdbc-type-for-null: 'null'
