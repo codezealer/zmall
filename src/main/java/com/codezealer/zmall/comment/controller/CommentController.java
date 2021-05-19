@@ -11,6 +11,7 @@ import com.codezealer.zmall.comment.service.CommentInfoService;
 import com.codezealer.zmall.comment.service.CommentPictureService;
 import com.codezealer.zmall.common.http.HttpResult;
 import com.codezealer.zmall.common.util.WebContextUtil;
+import com.codezealer.zmall.order.service.OrderFacadeService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ClassUtils;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +44,10 @@ public class CommentController {
     @Resource
     CommentAggregateService commentAggregateService;
 
+    @Resource
+    OrderFacadeService orderFacadeService;
+
+
     @RequestMapping("/uploadPicture")
     public HttpResult<String> uploadPicture(HttpServletRequest request, @RequestParam(name = "file") MultipartFile file) {
         try {
@@ -71,6 +76,9 @@ public class CommentController {
             });
         }
         commentAggregateService.update(commentInfoDTO);
+
+        orderFacadeService.informCommentPublishedEvent(commentInfoDTO.getOrderId());
+
         return false;
     }
 }

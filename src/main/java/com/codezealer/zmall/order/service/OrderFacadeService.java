@@ -6,5 +6,9 @@ package com.codezealer.zmall.order.service;
 public interface OrderFacadeService {
 
 
-
+    /**
+     * 通知订单评论发表完成
+     * @param orderId
+     */
+    void informCommentPublishedEvent(Long orderId);
 }
