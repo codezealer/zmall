@@ -1,9 +1,12 @@
 package com.codezealer.zmall.comment.dto;
 
+import com.codezealer.zmall.common.util.BeanCopierUtil;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @Data
 public class CommentInfoDTO {
 
@@ -85,5 +88,22 @@ public class CommentInfoDTO {
     private Integer commentType;
 
     List<String> pictureUrlList;
+
+    /**
+     * 克隆
+     * @param clazz
+     * @param <T>
+     * @return
+     */
+    public <T> T clone(Class<T> clazz) {
+        T target = null;
+        try {
+            target = clazz.newInstance();
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        BeanCopierUtil.copyProperties(this, target);
+        return target;
+    }
 
 }

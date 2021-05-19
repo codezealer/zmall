@@ -1,5 +1,6 @@
 package com.codezealer.zmall.comment.service;
 
+import com.codezealer.zmall.comment.dto.CommentInfoDTO;
 import com.codezealer.zmall.comment.entity.CommentAggregate;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface CommentAggregateService extends IService<CommentAggregate> {
 
+    void update(CommentInfoDTO commentInfoDTO);
 }

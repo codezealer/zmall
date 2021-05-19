@@ -6,8 +6,10 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.codezealer.zmall.common.util.BeanCopierUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>
@@ -17,6 +19,7 @@ import lombok.EqualsAndHashCode;
  * @author codezealer
  * @since 2021-05-18
  */
+@Slf4j
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("comment_info")
@@ -116,4 +119,14 @@ public class CommentInfo implements Serializable {
     private LocalDateTime gmtModified;
 
 
+    public <T> T clone(Class<T> clazz) {
+        T target = null;
+        try {
+            target = clazz.newInstance();
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        BeanCopierUtil.copyProperties(this, target);
+        return target;
+    }
 }

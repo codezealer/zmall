@@ -14,5 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface CommentInfoService extends IService<CommentInfo> {
 
-    void saveCommentInfo(CommentInfoDTO commentInfoDTO);
+    CommentInfoDTO saveCommentInfo(CommentInfoDTO commentInfoDTO);
 }

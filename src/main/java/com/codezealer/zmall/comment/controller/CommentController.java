@@ -1,9 +1,11 @@
 package com.codezealer.zmall.comment.controller;
 
 
+import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.codezealer.zmall.comment.dto.CommentInfoDTO;
+import com.codezealer.zmall.comment.entity.CommentPicture;
 import com.codezealer.zmall.comment.service.CommentAggregateService;
 import com.codezealer.zmall.comment.service.CommentInfoService;
 import com.codezealer.zmall.comment.service.CommentPictureService;
@@ -17,6 +19,9 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.Optional;
 
 /**
  * <p>
@@ -54,9 +59,18 @@ public class CommentController {
 
     @PostMapping("/publish")
     public Boolean publishComment(@RequestBody CommentInfoDTO commentInfoDTO) {
-
-        commentInfoService.saveCommentInfo(commentInfoDTO);
-
+        CommentInfoDTO returnCommentInfo = commentInfoService.saveCommentInfo(commentInfoDTO);
+        if (CollectionUtil.isNotEmpty(commentInfoDTO.getPictureUrlList())) {
+            commentInfoDTO.getPictureUrlList().forEach(s -> {
+                CommentPicture commentPicture = new CommentPicture();
+                commentPicture.setCommentInfoId(returnCommentInfo.getId());
+                commentPicture.setCommentPictureUrl(s);
+                commentPicture.setGmtCreate(LocalDateTime.now());
+                commentPicture.setGmtModified(LocalDateTime.now());
+                commentPictureService.save(commentPicture);
+            });
+        }
+        commentAggregateService.update(commentInfoDTO);
         return false;
     }
 }
