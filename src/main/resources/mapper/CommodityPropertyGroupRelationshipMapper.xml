@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.commodity.mapper.CommodityPropertyGroupRelationshipMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.commodity.entity.CommodityPropertyGroupRelationship">
+        <id column="id" property="id" />
+        <result column="property_group_id" property="propertyGroupId" />
+        <result column="property_id" property="propertyId" />
+        <result column="is_required" property="isRequired" />
+        <result column="property_type" property="propertyType" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, property_group_id, property_id, is_required, property_type, gmt_create, gmt_modified
+    </sql>
+
+</mapper>

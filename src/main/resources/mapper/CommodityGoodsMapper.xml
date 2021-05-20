@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.commodity.mapper.CommodityGoodsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.commodity.entity.CommodityGoods">
+        <id column="id" property="id" />
+        <result column="category_id" property="categoryId" />
+        <result column="brand_id" property="brandId" />
+        <result column="spu_code" property="spuCode" />
+        <result column="goods_name" property="goodsName" />
+        <result column="goods_sub_name" property="goodsSubName" />
+        <result column="gross_weight" property="grossWeight" />
+        <result column="goods_length" property="goodsLength" />
+        <result column="goods_width" property="goodsWidth" />
+        <result column="goods_height" property="goodsHeight" />
+        <result column="goods_status" property="goodsStatus" />
+        <result column="service_guarantees" property="serviceGuarantees" />
+        <result column="package_list" property="packageList" />
+        <result column="freight_template_id" property="freightTemplateId" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, category_id, brand_id, spu_code, goods_name, goods_sub_name, gross_weight, goods_length, goods_width, goods_height, goods_status, service_guarantees, package_list, freight_template_id, gmt_create, gmt_modified
+    </sql>
+
+</mapper>

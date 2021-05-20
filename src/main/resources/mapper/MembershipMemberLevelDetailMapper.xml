@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.member.mapper.MembershipMemberLevelDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.member.entity.MembershipMemberLevelDetail">
+        <id column="id" property="id" />
+        <result column="member_level_id" property="memberLevelId" />
+        <result column="old_growth_value" property="oldGrowthValue" />
+        <result column="updated_growth_value" property="updatedGrowthValue" />
+        <result column="new_growth_value" property="newGrowthValue" />
+        <result column="old_member_level" property="oldMemberLevel" />
+        <result column="new_member_level" property="newMemberLevel" />
+        <result column="update_reason" property="updateReason" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, member_level_id, old_growth_value, updated_growth_value, new_growth_value, old_member_level, new_member_level, update_reason, gmt_create, gmt_modified
+    </sql>
+
+</mapper>

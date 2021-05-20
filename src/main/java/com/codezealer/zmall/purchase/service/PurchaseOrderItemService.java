@@ -1,0 +1,16 @@
+package com.codezealer.zmall.purchase.service;
+
+import com.codezealer.zmall.purchase.entity.PurchaseOrderItem;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+/**
+ * <p>
+ * 采购单中的商品条目 服务类
+ * </p>
+ *
+ * @author codezealer
+ * @since 2021-05-20
+ */
+public interface PurchaseOrderItemService extends IService<PurchaseOrderItem> {
+
+}

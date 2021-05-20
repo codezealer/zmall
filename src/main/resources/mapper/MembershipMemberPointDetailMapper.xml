@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.member.mapper.MembershipMemberPointDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.member.entity.MembershipMemberPointDetail">
+        <id column="id" property="id" />
+        <result column="member_point_id" property="memberPointId" />
+        <result column="old_member_point" property="oldMemberPoint" />
+        <result column="updated_member_point" property="updatedMemberPoint" />
+        <result column="new_member_point" property="newMemberPoint" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+        <result column="update_reason" property="updateReason" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, member_point_id, old_member_point, updated_member_point, new_member_point, gmt_create, gmt_modified, update_reason
+    </sql>
+
+</mapper>

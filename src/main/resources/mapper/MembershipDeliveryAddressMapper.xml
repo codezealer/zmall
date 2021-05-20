@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.member.mapper.MembershipDeliveryAddressMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.member.entity.MembershipDeliveryAddress">
+        <id column="id" property="id" />
+        <result column="user_account_id" property="userAccountId" />
+        <result column="province" property="province" />
+        <result column="city" property="city" />
+        <result column="district" property="district" />
+        <result column="consignee" property="consignee" />
+        <result column="address" property="address" />
+        <result column="cell_phone_number" property="cellPhoneNumber" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_account_id, province, city, district, consignee, address, cell_phone_number, gmt_create, gmt_modified
+    </sql>
+
+</mapper>

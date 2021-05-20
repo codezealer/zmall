@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.promotion.mapper.PromotionActivityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.promotion.entity.PromotionActivity">
+        <id column="id" property="id" />
+        <result column="promotion_activity_name" property="promotionActivityName" />
+        <result column="promotion_activity_start_time" property="promotionActivityStartTime" />
+        <result column="promotion_activity_end_time" property="promotionActivityEndTime" />
+        <result column="promotion_activity_comment" property="promotionActivityComment" />
+        <result column="promotion_activity_status" property="promotionActivityStatus" />
+        <result column="promotion_activity_rule" property="promotionActivityRule" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, promotion_activity_name, promotion_activity_start_time, promotion_activity_end_time, promotion_activity_comment, promotion_activity_status, promotion_activity_rule, gmt_create, gmt_modified
+    </sql>
+
+</mapper>

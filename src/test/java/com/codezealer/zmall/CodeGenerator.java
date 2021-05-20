@@ -45,7 +45,8 @@ public class CodeGenerator {
         gc.setAuthor("codezealer");
         gc.setOpen(false);
         // 设置名字
-        gc.setControllerName("%sController");
+//        gc.setControllerName("%sController");
+        gc.setControllerName("");
         gc.setServiceName("%sService");
         gc.setServiceImplName("%sServiceImpl");
         gc.setMapperName("%sMapper");
@@ -75,7 +76,7 @@ public class CodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         //  pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.codezealer.zmall.auth");
+        pc.setParent("com.codezealer.zmall.wms");
         mpg.setPackageInfo(pc);
 
         // 如果模板引擎是 velocity

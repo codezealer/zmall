@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.purchase.mapper.PurchaseOrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.purchase.entity.PurchaseOrder">
+        <id column="id" property="id" />
+        <result column="supplier_id" property="supplierId" />
+        <result column="expect_arrival_time" property="expectArrivalTime" />
+        <result column="contactor" property="contactor" />
+        <result column="contact_phone_number" property="contactPhoneNumber" />
+        <result column="contact_email" property="contactEmail" />
+        <result column="purchase_order_comment" property="purchaseOrderComment" />
+        <result column="purchaser" property="purchaser" />
+        <result column="purchase_order_status" property="purchaseOrderStatus" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, supplier_id, expect_arrival_time, contactor, contact_phone_number, contact_email, purchase_order_comment, purchaser, purchase_order_status, gmt_create, gmt_modified
+    </sql>
+
+</mapper>

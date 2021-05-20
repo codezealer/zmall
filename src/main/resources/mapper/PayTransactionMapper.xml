@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.pay.mapper.PayTransactionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.pay.entity.PayTransaction">
+        <id column="id" property="id" />
+        <result column="transaction_number" property="transactionNumber" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+        <result column="order_id" property="orderId" />
+        <result column="total_order_amount" property="totalOrderAmount" />
+        <result column="discount_order_amount" property="discountOrderAmount" />
+        <result column="payable_order_amount" property="payableOrderAmount" />
+        <result column="transaction_channel" property="transactionChannel" />
+        <result column="transaction_channel_account" property="transactionChannelAccount" />
+        <result column="transaction_channel_pay_time" property="transactionChannelPayTime" />
+        <result column="transaction_channel_order_no" property="transactionChannelOrderNo" />
+        <result column="transaction_channel_status" property="transactionChannelStatus" />
+        <result column="user_account_id" property="userAccountId" />
+        <result column="user_pay_account" property="userPayAccount" />
+        <result column="transaction_status" property="transactionStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, transaction_number, gmt_create, gmt_modified, order_id, total_order_amount, discount_order_amount, payable_order_amount, transaction_channel, transaction_channel_account, transaction_channel_pay_time, transaction_channel_order_no, transaction_channel_status, user_account_id, user_pay_account, transaction_status
+    </sql>
+
+</mapper>

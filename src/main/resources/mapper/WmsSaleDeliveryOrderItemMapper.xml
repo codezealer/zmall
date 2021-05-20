@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codezealer.zmall.wms.mapper.WmsSaleDeliveryOrderItemMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codezealer.zmall.wms.entity.WmsSaleDeliveryOrderItem">
+        <id column="id" property="id" />
+        <result column="sale_delivery_order_id" property="saleDeliveryOrderId" />
+        <result column="goods_sku_id" property="goodsSkuId" />
+        <result column="goods_sku_code" property="goodsSkuCode" />
+        <result column="goods_name" property="goodsName" />
+        <result column="sale_properties" property="saleProperties" />
+        <result column="goods_gross_weight" property="goodsGrossWeight" />
+        <result column="purchase_quantity" property="purchaseQuantity" />
+        <result column="purchase_price" property="purchasePrice" />
+        <result column="promotion_activity_id" property="promotionActivityId" />
+        <result column="goods_length" property="goodsLength" />
+        <result column="goods_width" property="goodsWidth" />
+        <result column="goods_height" property="goodsHeight" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, sale_delivery_order_id, goods_sku_id, goods_sku_code, goods_name, sale_properties, goods_gross_weight, purchase_quantity, purchase_price, promotion_activity_id, goods_length, goods_width, goods_height, gmt_create, gmt_modified
+    </sql>
+
+</mapper>
