@@ -1,5 +1,6 @@
 package com.codezealer.zmall.cart.service;
 
+import com.codezealer.zmall.cart.dto.ShoppingCartDTO;
 import com.codezealer.zmall.cart.dto.ShoppingCartItemDTO;
 import com.codezealer.zmall.cart.entity.ShoppingCart;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -15,4 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ShoppingCartService extends IService<ShoppingCart> {
 
     Boolean addShoppingCartItem(ShoppingCartItemDTO shoppingCartItemDTO);
+
+    ShoppingCartDTO getShoppingCart(Long accountId);
 }

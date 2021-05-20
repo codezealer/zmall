@@ -1,14 +1,11 @@
 package com.codezealer.zmall.cart.controller;
 
 
+import com.codezealer.zmall.cart.dto.ShoppingCartDTO;
 import com.codezealer.zmall.cart.dto.ShoppingCartItemDTO;
 import com.codezealer.zmall.cart.service.ShoppingCartService;
 import com.codezealer.zmall.common.http.HttpResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -30,6 +27,12 @@ public class ShoppingCartController {
     @PostMapping("/addItem")
     public HttpResult<Boolean> addShoppingCartItem(@RequestBody ShoppingCartItemDTO shoppingCartItemDTO) {
         return HttpResult.ok(shoppingCartService.addShoppingCartItem(shoppingCartItemDTO));
+    }
+
+    @RequestMapping("/getShoppingCart/{accountId}")
+    public HttpResult<ShoppingCartDTO> getShoppingCart(@PathVariable("accountId") Long accountId) {
+        ShoppingCartDTO shoppingCartDTO = shoppingCartService.getShoppingCart(accountId);
+        return HttpResult.ok(shoppingCartDTO);
     }
 }
 
