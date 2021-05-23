@@ -1,6 +1,7 @@
 package com.codezealer.zmall.inventory.service;
 
 import com.codezealer.zmall.inventory.dto.PurchaseInputOrderDTO;
+import com.codezealer.zmall.inventory.dto.ReturnGoodsInputDTO;
 
 /**
  * 库存中心对外提供接口u
@@ -16,7 +17,5 @@ public interface InventoryFacadeService {
     /**
      * 退货入库 更新库存
      */
-
-    Boolean informReturnGoodsInputFinished();
-
+    Boolean informReturnGoodsInputFinished(ReturnGoodsInputDTO returnGoodsInputDTO);
 }

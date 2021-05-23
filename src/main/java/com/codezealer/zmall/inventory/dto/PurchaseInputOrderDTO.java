@@ -2,22 +2,16 @@ package com.codezealer.zmall.inventory.dto;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class PurchaseInputOrderDTO {
 
-    /**
-     * 商品SKU ID
-     */
-    private Long goodsSkuId;
+    Long purchaseOrderId;
 
-    /**
-     * 采购数量
-     */
-    private Long purchaseCount;
+    Long supplierId;
 
-    /**
-     * 采购价格
-     */
-    private Long purchasePrice;
+
+    List<PurchaseInputOrderItemDTO> itemList;
 
 }
