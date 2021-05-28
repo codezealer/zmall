@@ -22,7 +22,7 @@ public class ReturnGoodsInputStockUpdater extends AbstractStockUpdater {
      */
     @Override
     public void updateSaleStockQuantity() {
-        this.inventoryGoodsStockList.forEach(item -> {
+        this.goodsStockList.forEach(item -> {
             ReturnGoodsInputOrderItemDTO returnGoodsInputOrderItemDTO = this.returnGoodsInputOrderItemDTOMap.get(item.getGoodsSkuId());
             item.setSaleStockQuantity(item.getSaleStockQuantity() + returnGoodsInputOrderItemDTO.getArrivalCount());
             this.goodsStockDAO.saveOrUpdate(item);
@@ -34,7 +34,7 @@ public class ReturnGoodsInputStockUpdater extends AbstractStockUpdater {
      */
     @Override
     public void updateSaledStockQuantity() {
-        this.inventoryGoodsStockList.forEach(item -> {
+        this.goodsStockList.forEach(item -> {
             ReturnGoodsInputOrderItemDTO returnGoodsInputOrderItemDTO = this.returnGoodsInputOrderItemDTOMap.get(item.getGoodsSkuId());
             item.setSaledStockQuantity(item.getSaledStockQuantity() - returnGoodsInputOrderItemDTO.getArrivalCount());
             this.goodsStockDAO.saveOrUpdate(item);

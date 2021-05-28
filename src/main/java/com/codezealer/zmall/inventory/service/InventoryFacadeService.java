@@ -26,4 +26,18 @@ public interface InventoryFacadeService {
      * @return
      */
     Boolean informSubmitOrderEvent(OrderInfoDTO orderInfoDTO);
+
+    /**
+     * 通知库存中心 “支付订单”事件发生了
+     * @param orderInfoDTO
+     * @return
+     */
+    Boolean informPayOrderEvent(OrderInfoDTO orderInfoDTO);
+
+    /**
+     * 通知库存中心 "取消订单"事件
+     * @param orderInfoDTO
+     * @return
+     */
+    Boolean informCancelOrderEvent(OrderInfoDTO orderInfoDTO);
 }

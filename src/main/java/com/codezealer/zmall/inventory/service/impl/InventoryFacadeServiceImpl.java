@@ -53,4 +53,15 @@ public class InventoryFacadeServiceImpl implements InventoryFacadeService {
         StockUpdater stockUpdater = submitOrderStockUpdaterFactory.create(orderInfoDTO);
         return stockUpdater.updateGoodsStock();
     }
+
+    @Override
+    public Boolean informPayOrderEvent(OrderInfoDTO orderInfoDTO) {
+
+        return null;
+    }
+
+    @Override
+    public Boolean informCancelOrderEvent(OrderInfoDTO orderInfoDTO) {
+        return null;
+    }
 }

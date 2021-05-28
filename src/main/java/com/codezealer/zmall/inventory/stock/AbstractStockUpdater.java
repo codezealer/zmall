@@ -11,11 +11,11 @@ import java.util.List;
 @Log4j2
 public abstract class AbstractStockUpdater implements StockUpdater {
 
-    protected List<InventoryGoodsStock> inventoryGoodsStockList;
+    protected List<InventoryGoodsStock> goodsStockList;
     protected InventoryGoodsStockDAO goodsStockDAO;
 
-    public AbstractStockUpdater(List<InventoryGoodsStock> inventoryGoodsStockList, InventoryGoodsStockDAO goodsStockDAO) {
-        this.inventoryGoodsStockList = inventoryGoodsStockList;
+    public AbstractStockUpdater(List<InventoryGoodsStock> goodsStockList, InventoryGoodsStockDAO goodsStockDAO) {
+        this.goodsStockList = goodsStockList;
         this.goodsStockDAO = goodsStockDAO;
     }
 
@@ -52,19 +52,19 @@ public abstract class AbstractStockUpdater implements StockUpdater {
     public abstract void updateLockedStockQuantity();
 
     public void updateStockStatus() {
-        for (InventoryGoodsStock inventoryGoodsStock : inventoryGoodsStockList) {
+        for (InventoryGoodsStock inventoryGoodsStock : goodsStockList) {
             inventoryGoodsStock.setStockStatus(inventoryGoodsStock.getSaleStockQuantity() > 0 ? StockStatus.IN_STOCK : StockStatus.OUT_STOCK);
         }
     }
 
     public  void updateGmtModified() {
-        for (InventoryGoodsStock inventoryGoodsStock : inventoryGoodsStockList) {
+        for (InventoryGoodsStock inventoryGoodsStock : goodsStockList) {
             inventoryGoodsStock.setGmtModified(LocalDateTime.now());
         }
     }
 
     public void executeUpdateGoodsStock() {
-        for (InventoryGoodsStock inventoryGoodsStock : inventoryGoodsStockList) {
+        for (InventoryGoodsStock inventoryGoodsStock : goodsStockList) {
             goodsStockDAO.saveOrUpdate(inventoryGoodsStock);
         }
     }

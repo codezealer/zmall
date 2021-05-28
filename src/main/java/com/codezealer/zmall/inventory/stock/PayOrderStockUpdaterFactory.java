@@ -12,9 +12,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Component
-public class SubmitOrderStockUpdaterFactory<T> extends AbstractStockUpdaterFactory<T> {
+public class PayOrderStockUpdaterFactory<T> extends AbstractStockUpdaterFactory<T> {
 
-    public SubmitOrderStockUpdaterFactory(InventoryGoodsStockDAO stockDAO) {
+    public PayOrderStockUpdaterFactory(InventoryGoodsStockDAO stockDAO) {
         super(stockDAO);
     }
 
@@ -22,7 +22,7 @@ public class SubmitOrderStockUpdaterFactory<T> extends AbstractStockUpdaterFacto
     protected StockUpdater create(List<InventoryGoodsStock> goodsStocks, T parameter) {
         OrderInfoDTO orderInfoDTO = (OrderInfoDTO) parameter;
         Map<Long, OrderItemDTO> orderItemDTOMap = orderInfoDTO.getOrderItems().stream().collect(Collectors.toMap(OrderItemDTO::getGoodsSkuId, Function.identity()));
-        return new SubmitOrderStockUpdater(goodsStocks, this.stockDAO, orderItemDTOMap);
+        return new PayOrderStockUpdater(goodsStocks, this.stockDAO, orderItemDTOMap);
     }
 
     @Override

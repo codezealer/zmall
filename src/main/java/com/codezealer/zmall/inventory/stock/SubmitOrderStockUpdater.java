@@ -22,7 +22,7 @@ public class SubmitOrderStockUpdater extends AbstractStockUpdater {
 
     @Override
     public void updateSaleStockQuantity() {
-        this.inventoryGoodsStockList.forEach(item -> {
+        this.goodsStockList.forEach(item -> {
             OrderItemDTO orderItemDTO = this.orderItemDTOMap.get(item.getGoodsSkuId());
             item.setSaleStockQuantity(item.getSaleStockQuantity() - orderItemDTO.getPurchaseQuantity());
             this.goodsStockDAO.saveOrUpdate(item);
@@ -36,7 +36,7 @@ public class SubmitOrderStockUpdater extends AbstractStockUpdater {
 
     @Override
     public void updateLockedStockQuantity() {
-        this.inventoryGoodsStockList.forEach(item -> {
+        this.goodsStockList.forEach(item -> {
             OrderItemDTO orderItemDTO = this.orderItemDTOMap.get(item.getGoodsSkuId());
             item.setLockedStockQuantity(item.getLockedStockQuantity() + orderItemDTO.getPurchaseQuantity());
             this.goodsStockDAO.saveOrUpdate(item);
