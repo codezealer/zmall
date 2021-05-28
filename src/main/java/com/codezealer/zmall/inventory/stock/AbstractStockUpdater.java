@@ -1,4 +1,4 @@
-package com.codezealer.zmall.inventory.command;
+package com.codezealer.zmall.inventory.stock;
 
 import com.codezealer.zmall.inventory.constant.StockStatus;
 import com.codezealer.zmall.inventory.dao.InventoryGoodsStockDAO;
@@ -9,12 +9,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Log4j2
-public abstract class AbstractGoodsStockUpdateCommand implements GoodsStockUpdateCommand {
+public abstract class AbstractStockUpdater implements StockUpdater {
 
     protected List<InventoryGoodsStock> inventoryGoodsStockList;
     protected InventoryGoodsStockDAO inventoryGoodsStockDAO;
 
-    public AbstractGoodsStockUpdateCommand(List<InventoryGoodsStock> inventoryGoodsStockList, InventoryGoodsStockDAO inventoryGoodsStockDAO) {
+    public AbstractStockUpdater(List<InventoryGoodsStock> inventoryGoodsStockList, InventoryGoodsStockDAO inventoryGoodsStockDAO) {
         this.inventoryGoodsStockList = inventoryGoodsStockList;
         this.inventoryGoodsStockDAO = inventoryGoodsStockDAO;
     }
