@@ -1,11 +1,9 @@
 package com.codezealer.zmall.inventory.stock;
 
 import com.codezealer.zmall.inventory.dao.InventoryGoodsStockDAO;
-import com.codezealer.zmall.inventory.dto.PurchaseInputOrderDTO;
 import com.codezealer.zmall.inventory.dto.PurchaseInputOrderItemDTO;
 import com.codezealer.zmall.inventory.entity.InventoryGoodsStock;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +22,7 @@ public class PurchaseInputStockUpdater extends AbstractStockUpdater {
         this.inventoryGoodsStockList.forEach(item -> {
             PurchaseInputOrderItemDTO purchaseInputOrderItemDTO = this.purcahseInputOrderItemDTOMap.get(item.getGoodsSkuId());
             item.setSaleStockQuantity(item.getSaleStockQuantity() + purchaseInputOrderItemDTO.getArrivalCount());
-            this.inventoryGoodsStockDAO.saveOrUpdate(item);
+            this.goodsStockDAO.saveOrUpdate(item);
         });
     }
 

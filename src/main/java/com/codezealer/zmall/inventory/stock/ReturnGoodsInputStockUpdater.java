@@ -25,7 +25,7 @@ public class ReturnGoodsInputStockUpdater extends AbstractStockUpdater {
         this.inventoryGoodsStockList.forEach(item -> {
             ReturnGoodsInputOrderItemDTO returnGoodsInputOrderItemDTO = this.returnGoodsInputOrderItemDTOMap.get(item.getGoodsSkuId());
             item.setSaleStockQuantity(item.getSaleStockQuantity() + returnGoodsInputOrderItemDTO.getArrivalCount());
-            this.inventoryGoodsStockDAO.saveOrUpdate(item);
+            this.goodsStockDAO.saveOrUpdate(item);
         });
     }
 
@@ -37,7 +37,7 @@ public class ReturnGoodsInputStockUpdater extends AbstractStockUpdater {
         this.inventoryGoodsStockList.forEach(item -> {
             ReturnGoodsInputOrderItemDTO returnGoodsInputOrderItemDTO = this.returnGoodsInputOrderItemDTOMap.get(item.getGoodsSkuId());
             item.setSaledStockQuantity(item.getSaledStockQuantity() - returnGoodsInputOrderItemDTO.getArrivalCount());
-            this.inventoryGoodsStockDAO.saveOrUpdate(item);
+            this.goodsStockDAO.saveOrUpdate(item);
         });
     }
 

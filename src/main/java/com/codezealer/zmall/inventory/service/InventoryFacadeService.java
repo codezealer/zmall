@@ -1,6 +1,6 @@
 package com.codezealer.zmall.inventory.service;
 
-import com.codezealer.zmall.inventory.dto.OrderInfoDTO;
+import com.codezealer.zmall.order.dto.OrderInfoDTO;
 import com.codezealer.zmall.inventory.dto.PurchaseInputOrderDTO;
 import com.codezealer.zmall.wms.dto.ReturnGoodsInputOrderDTO;
 

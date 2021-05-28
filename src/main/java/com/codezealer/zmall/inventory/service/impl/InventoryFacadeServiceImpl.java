@@ -1,7 +1,8 @@
 package com.codezealer.zmall.inventory.service.impl;
 
 import com.codezealer.zmall.inventory.dao.InventoryGoodsStockDAO;
-import com.codezealer.zmall.inventory.dto.OrderInfoDTO;
+import com.codezealer.zmall.inventory.stock.SubmitOrderStockUpdaterFactory;
+import com.codezealer.zmall.order.dto.OrderInfoDTO;
 import com.codezealer.zmall.inventory.dto.PurchaseInputOrderDTO;
 import com.codezealer.zmall.inventory.service.InventoryFacadeService;
 import com.codezealer.zmall.inventory.stock.PurchaseInputStockUpdaterFactory;
@@ -21,6 +22,8 @@ public class InventoryFacadeServiceImpl implements InventoryFacadeService {
     PurchaseInputStockUpdaterFactory purchaseInputStockUpdaterFactory;
     @Resource
     ReturnGoodsInputStockUpdaterFactory returnGoodsInputStockUpdaterFactory;
+    @Resource
+    SubmitOrderStockUpdaterFactory submitOrderStockUpdaterFactory;
 
     /**
      * 采购入库 更新库存
@@ -47,7 +50,7 @@ public class InventoryFacadeServiceImpl implements InventoryFacadeService {
 
     @Override
     public Boolean informSubmitOrderEvent(OrderInfoDTO orderInfoDTO) {
-
-        return null;
+        StockUpdater stockUpdater = submitOrderStockUpdaterFactory.create(orderInfoDTO);
+        return stockUpdater.updateGoodsStock();
     }
 }

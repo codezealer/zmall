@@ -12,11 +12,11 @@ import java.util.List;
 public abstract class AbstractStockUpdater implements StockUpdater {
 
     protected List<InventoryGoodsStock> inventoryGoodsStockList;
-    protected InventoryGoodsStockDAO inventoryGoodsStockDAO;
+    protected InventoryGoodsStockDAO goodsStockDAO;
 
-    public AbstractStockUpdater(List<InventoryGoodsStock> inventoryGoodsStockList, InventoryGoodsStockDAO inventoryGoodsStockDAO) {
+    public AbstractStockUpdater(List<InventoryGoodsStock> inventoryGoodsStockList, InventoryGoodsStockDAO goodsStockDAO) {
         this.inventoryGoodsStockList = inventoryGoodsStockList;
-        this.inventoryGoodsStockDAO = inventoryGoodsStockDAO;
+        this.goodsStockDAO = goodsStockDAO;
     }
 
 
@@ -65,7 +65,7 @@ public abstract class AbstractStockUpdater implements StockUpdater {
 
     public void executeUpdateGoodsStock() {
         for (InventoryGoodsStock inventoryGoodsStock : inventoryGoodsStockList) {
-            inventoryGoodsStockDAO.saveOrUpdate(inventoryGoodsStock);
+            goodsStockDAO.saveOrUpdate(inventoryGoodsStock);
         }
     }
 

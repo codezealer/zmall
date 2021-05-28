@@ -1,4 +1,4 @@
-package com.codezealer.zmall.inventory.dto;
+package com.codezealer.zmall.order.dto;
 
 import lombok.Data;
 
