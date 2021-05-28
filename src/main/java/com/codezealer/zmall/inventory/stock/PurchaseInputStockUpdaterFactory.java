@@ -4,6 +4,7 @@ import com.codezealer.zmall.inventory.dao.InventoryGoodsStockDAO;
 import com.codezealer.zmall.inventory.dto.PurchaseInputOrderDTO;
 import com.codezealer.zmall.inventory.dto.PurchaseInputOrderItemDTO;
 import com.codezealer.zmall.inventory.entity.InventoryGoodsStock;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+@Component
 public class PurchaseInputStockUpdaterFactory<T> extends AbstractStockUpdaterFactory<T> {
 
     public PurchaseInputStockUpdaterFactory(InventoryGoodsStockDAO stockDAO) {

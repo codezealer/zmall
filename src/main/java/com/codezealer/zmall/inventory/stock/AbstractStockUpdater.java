@@ -20,6 +20,15 @@ public abstract class AbstractStockUpdater implements StockUpdater {
     }
 
 
+    /**
+     * 库存更新通用逻辑：
+     * 更新销售库存
+     * 更新锁定库存
+     * 更新已售库存
+     * 更新库存状态
+     * 更新时间
+     * @return
+     */
     @Override
     public Boolean updateGoodsStock() {
         try {
