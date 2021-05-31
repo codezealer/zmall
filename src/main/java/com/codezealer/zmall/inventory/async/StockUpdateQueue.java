@@ -1,12 +1,12 @@
 package com.codezealer.zmall.inventory.async;
 
-public interface StockUpdateQueue {
+public interface StockUpdateQueue<T> {
 
-    void put(StockUpdateMessage stockUpdateMessage) throws InterruptedException;
+    void put(StockUpdateMessage<T> stockUpdateMessage) throws Exception;
 
-    void putDirect(StockUpdateMessage stockUpdateMessage);
+    void putDirect(StockUpdateMessage<T> stockUpdateMessage) throws Exception;
 
-    StockUpdateMessage take();
+    StockUpdateMessage<T> take() throws Exception;
 
     int size();
 

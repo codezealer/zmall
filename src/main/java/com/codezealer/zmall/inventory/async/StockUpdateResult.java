@@ -3,10 +3,10 @@ package com.codezealer.zmall.inventory.async;
 import lombok.Data;
 
 @Data
-public class StockUpdateMessage <T> {
+public class StockUpdateResult {
 
     private String messageId;
-    private Integer operation;
-    private T parameter;
+
+    private Boolean result;
 
 }
