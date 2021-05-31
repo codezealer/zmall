@@ -27,7 +27,6 @@ public class PayOrderStockUpdater extends AbstractStockUpdater {
         this.goodsStockList.forEach(item -> {
             OrderItemDTO orderItemDTO = this.orderItemDTOMap.get(item.getGoodsSkuId());
             item.setSaledStockQuantity(item.getSaledStockQuantity() + orderItemDTO.getPurchaseQuantity());
-            this.goodsStockDAO.saveOrUpdate(item);
         });
     }
 
@@ -36,7 +35,6 @@ public class PayOrderStockUpdater extends AbstractStockUpdater {
         this.goodsStockList.forEach(item -> {
             OrderItemDTO orderItemDTO = this.orderItemDTOMap.get(item.getGoodsSkuId());
             item.setLockedStockQuantity(item.getLockedStockQuantity() - orderItemDTO.getPurchaseQuantity());
-            this.goodsStockDAO.saveOrUpdate(item);
         });
     }
 }

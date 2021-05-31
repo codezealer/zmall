@@ -22,7 +22,6 @@ public class PurchaseInputStockUpdater extends AbstractStockUpdater {
         this.goodsStockList.forEach(item -> {
             PurchaseInputOrderItemDTO purchaseInputOrderItemDTO = this.purcahseInputOrderItemDTOMap.get(item.getGoodsSkuId());
             item.setSaleStockQuantity(item.getSaleStockQuantity() + purchaseInputOrderItemDTO.getArrivalCount());
-            this.goodsStockDAO.saveOrUpdate(item);
         });
     }
 

@@ -1,13 +1,10 @@
 package com.codezealer.zmall.inventory.service.impl;
 
 import com.codezealer.zmall.inventory.dao.InventoryGoodsStockDAO;
-import com.codezealer.zmall.inventory.stock.SubmitOrderStockUpdaterFactory;
+import com.codezealer.zmall.inventory.stock.*;
 import com.codezealer.zmall.order.dto.OrderInfoDTO;
 import com.codezealer.zmall.inventory.dto.PurchaseInputOrderDTO;
 import com.codezealer.zmall.inventory.service.InventoryFacadeService;
-import com.codezealer.zmall.inventory.stock.PurchaseInputStockUpdaterFactory;
-import com.codezealer.zmall.inventory.stock.ReturnGoodsInputStockUpdaterFactory;
-import com.codezealer.zmall.inventory.stock.StockUpdater;
 import com.codezealer.zmall.wms.dto.ReturnGoodsInputOrderDTO;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +21,12 @@ public class InventoryFacadeServiceImpl implements InventoryFacadeService {
     ReturnGoodsInputStockUpdaterFactory returnGoodsInputStockUpdaterFactory;
     @Resource
     SubmitOrderStockUpdaterFactory submitOrderStockUpdaterFactory;
+    @Resource
+    PayOrderStockUpdaterFactory payOrderStockUpdaterFactory;
+    @Resource
+    CancelOrderStockUpdaterFactory cancelOrderStockUpdaterFactory;
+
+
 
     /**
      * 采购入库 更新库存
@@ -56,12 +59,13 @@ public class InventoryFacadeServiceImpl implements InventoryFacadeService {
 
     @Override
     public Boolean informPayOrderEvent(OrderInfoDTO orderInfoDTO) {
-
-        return null;
+        StockUpdater stockUpdater = payOrderStockUpdaterFactory.create(orderInfoDTO);
+        return stockUpdater.updateGoodsStock();
     }
 
     @Override
     public Boolean informCancelOrderEvent(OrderInfoDTO orderInfoDTO) {
-        return null;
+        StockUpdater stockUpdater = cancelOrderStockUpdaterFactory.create(orderInfoDTO);
+        return stockUpdater.updateGoodsStock();
     }
 }
