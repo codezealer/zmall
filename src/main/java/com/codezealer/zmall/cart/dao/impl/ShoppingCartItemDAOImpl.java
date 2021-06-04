@@ -41,4 +41,16 @@ public class ShoppingCartItemDAOImpl implements ShoppingCartItemDAO {
     public boolean delete(Long id) {
         return shoppingCartItemMapper.deleteById(id) > 0 ? true : false;
     }
+
+    @Override
+    public ShoppingCartItem getShoppingCartItemByGoodsSkuId(Long shoppingCartId, Long goodsSkuId) {
+        return shoppingCartItemMapper.selectOne(new LambdaQueryWrapper<ShoppingCartItem>()
+                                            .eq(ShoppingCartItem::getShoppingCartId, shoppingCartId)
+                                            .eq(ShoppingCartItem::getGoodsSkuId, goodsSkuId));
+    }
+
+    @Override
+    public void remove(Long id) {
+        shoppingCartItemMapper.deleteById(id);
+    }
 }

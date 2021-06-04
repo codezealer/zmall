@@ -13,4 +13,8 @@ public interface ShoppingCartItemDAO {
     Boolean updatePurchaseQuantity(Long id, Long purchaseQuantity);
 
     boolean delete(Long id);
+
+    ShoppingCartItem getShoppingCartItemByGoodsSkuId(Long shoppingCartId, Long goodsSkuId);
+
+    void remove(Long id);
 }
