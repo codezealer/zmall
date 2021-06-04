@@ -29,7 +29,7 @@ public class ShoppingCartController {
         return HttpResult.ok(shoppingCartService.addShoppingCartItem(shoppingCartItemDTO));
     }
 
-    @RequestMapping("/getShoppingCart/{accountId}")
+    @RequestMapping("/{accountId}")
     public HttpResult<ShoppingCartDTO> getShoppingCart(@PathVariable("accountId") Long accountId) {
         ShoppingCartDTO shoppingCartDTO = shoppingCartService.getShoppingCart(accountId);
         return HttpResult.ok(shoppingCartDTO);

@@ -9,4 +9,8 @@ public interface ShoppingCartItemDAO {
     Long save(ShoppingCartItem shoppingCartItem);
 
     List<ShoppingCartItem> queryListByShoppingCartId(Long shoppingCartId);
+
+    Boolean updatePurchaseQuantity(Long id, Long purchaseQuantity);
+
+    boolean delete(Long id);
 }
