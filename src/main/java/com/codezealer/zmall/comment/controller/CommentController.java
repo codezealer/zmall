@@ -6,10 +6,13 @@ import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.codezealer.zmall.comment.dto.CommentInfoDTO;
 import com.codezealer.zmall.comment.entity.CommentPicture;
+import com.codezealer.zmall.comment.query.CommentInfoQuery;
 import com.codezealer.zmall.comment.service.CommentAggregateService;
 import com.codezealer.zmall.comment.service.CommentInfoService;
 import com.codezealer.zmall.comment.service.CommentPictureService;
 import com.codezealer.zmall.common.http.HttpResult;
+import com.codezealer.zmall.common.page.PageRequest;
+import com.codezealer.zmall.common.page.PageResult;
 import com.codezealer.zmall.common.util.WebContextUtil;
 import com.codezealer.zmall.order.service.OrderFacadeService;
 import lombok.extern.slf4j.Slf4j;
@@ -80,6 +83,11 @@ public class CommentController {
         orderFacadeService.informCommentPublishedEvent(commentInfoDTO.getOrderId());
 
         return false;
+    }
+
+    @PostMapping("/listPage")
+    public PageResult<CommentInfoDTO> listPage(PageRequest<CommentInfoQuery> queryPageRequest) {
+        return commentInfoService.selectPage(queryPageRequest);
     }
 }
 

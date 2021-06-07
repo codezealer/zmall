@@ -15,6 +15,11 @@ public class BeanCopierUtil {
      * @param target
      */
     public static void copyProperties(Object source, Object target) {
+        BeanCopier beanCopier = getInstance(source, target);
+        beanCopier.copy(source, target, null);
+    }
+
+    private static BeanCopier getInstance(Object source, Object target) {
         String beanKey = source.toString() + target.toString();
         BeanCopier beanCopier = null;
         if (!beanCopierMap.containsKey(beanKey)) {
@@ -27,6 +32,6 @@ public class BeanCopierUtil {
         } else {
             beanCopier = beanCopierMap.get(beanKey);
         }
-        beanCopier.copy(source, target, null);
+        return beanCopier;
     }
 }
