@@ -15,7 +15,13 @@ import com.codezealer.zmall.common.page.PageResult;
  * @author codezealer
  * @since 2021-05-20
  */
-public interface CommodityBrandService extends IService<CommodityBrand> {
+public interface BrandService {
 
     PageResult<BrandDTO> listPage(PageRequest<BrandQuery> pageRequest);
+
+    BrandDTO getById(Long id);
+
+    boolean add(BrandDTO brandDTO);
+
+    boolean update(BrandDTO brandDTO);
 }

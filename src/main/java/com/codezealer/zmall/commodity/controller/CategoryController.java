@@ -7,15 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 商品sku信息 前端控制器
+ * 商品中心的类目表 前端控制器
  * </p>
  *
  * @author codezealer
  * @since 2021-05-20
  */
 @RestController
-@RequestMapping("/commodity-goods-sku")
-public class CommodityGoodsSkuController {
+@RequestMapping("/commodity/category")
+public class CategoryController {
+
+
 
 }
 

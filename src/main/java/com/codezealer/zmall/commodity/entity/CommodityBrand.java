@@ -46,7 +46,7 @@ public class CommodityBrand implements Serializable {
     /**
      * logo图片
      */
-    private Blob logo;
+    private String logoUrl;
 
     /**
      * 品牌介绍
@@ -56,7 +56,7 @@ public class CommodityBrand implements Serializable {
     /**
      * 品牌授权凭证
      */
-    private Blob brandAuthorizationVoucher;
+    private String brandAuthorizationVoucherUrl;
 
     /**
      * 品牌所在地

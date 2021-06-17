@@ -1,11 +1,11 @@
-package com.codezealer.zmall.commodity.dto;
+package com.codezealer.zmall.commodity.vo;
 
 import lombok.Data;
 
 import java.sql.Blob;
 
 @Data
-public class BrandDTO {
+public class BrandVO {
     /**
      * 品牌中文名
      */

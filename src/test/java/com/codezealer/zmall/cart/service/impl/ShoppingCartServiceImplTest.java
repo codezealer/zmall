@@ -16,6 +16,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -78,4 +80,5 @@ public class ShoppingCartServiceImplTest {
 
         return shoppingCartItemDO;
     }
+
 }

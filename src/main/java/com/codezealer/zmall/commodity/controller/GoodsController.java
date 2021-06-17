@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 商品对属性分组中的属性输入的值 前端控制器
+ * 商品中心的商品信息基础表 前端控制器
  * </p>
  *
  * @author codezealer
  * @since 2021-05-20
  */
 @RestController
-@RequestMapping("/commodity-goods-proprety-group-value")
-public class CommodityGoodsPropretyGroupValueController {
+@RequestMapping("/commodity-goods")
+public class GoodsController {
 
 }
 

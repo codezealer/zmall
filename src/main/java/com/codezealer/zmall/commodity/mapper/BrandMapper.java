@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author codezealer
  * @since 2021-05-20
  */
-public interface CommodityBrandMapper extends BaseMapper<CommodityBrand> {
+public interface BrandMapper extends BaseMapper<CommodityBrand> {
 
 }
